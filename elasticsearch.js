@@ -7,12 +7,12 @@ var elasticsearch = require('elasticsearch');
 //env('.env');
 
 const es = elasticsearch.Client({
-    //host: process.env.BONSAI_URL,
+   // host: '10.31.250.179:9200',
     host: '35.204.75.52:9200', 
     log: 'info'
 });
 
-const INDEX_NAME = 'players';
+const INDEX_NAME = 'products';
 const INDEX_TYPE = 'details';
 
 /*
@@ -26,7 +26,7 @@ function readDataFile(){
     };
 
     //return require("./data/players.json")
-    return require("./data/productstest2.json")
+    return require("./data/products.json")
 }
 
 function indexExists() {
@@ -58,8 +58,8 @@ function indexMapping(){
                     },		    
                 product_name: {
                     type: "completion",
-                    analyzer: "simple",
-                    search_analyzer: "simple"
+                    analyzer: "standard",
+                    search_analyzer: "standard"
                 }
 		    /*
 		    */

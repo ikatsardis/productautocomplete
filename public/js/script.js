@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
         if(word !== '' && word !== previous){
             previous = word;
 
-            suggestion(word, 1);
+            suggestion(word, 10);
         }
 
     });
@@ -55,8 +55,9 @@ function suggestion(text, size){
             });
 
             $.each(product_name, function(index, value){
-                $('.autocomplete').append('<a class="option" href="#" data-id="'+value._id+'" data-name="'+value._source.product_name+'"><span class="bold">'+ value._source.product_name +'</span></a>')
+               $('.autocomplete').append('<a class="option" href="#" data-id="'+value._id+'" data-name="'+value._source.product_name+'"><span class="bold">'+ value._source.product_name +'</span></a>')
             });
+
 
 
         });
